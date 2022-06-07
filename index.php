@@ -1,10 +1,18 @@
+<?php
+session_start();
+if(isset($_SESSION['username'])){
+    echo "Selamat Datang " . $_SESSION['username'];
+    echo "<a href='logout.php'>logout</a>";
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Belajar PHP - Tampilkan Data Identitas</title>
 
-    <link rel="stylesheet" href="style.css">
+
 
     <style>
 #customers {
@@ -76,12 +84,13 @@
 <body>
 
     <a href="tambah.php">+ TAMBAH IDENTITAS</a>
+    <a href="login.php">LOG IN</a>
     <br />
     <br />
     <table id="customers">
         <tr>
             <th>NO</th>
-            <th>NIM</th>
+            <th>Nomor identitas</th>
             <th>Nama</th>
             <th>alamat</th>
             <th>no telp</th>
